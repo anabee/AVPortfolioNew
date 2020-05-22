@@ -7,11 +7,17 @@ console.log(process.env.APIKEY)
 const auth = {
     auth: {
         api_key: process.env.APIKEY,
+        
         domain: process.env.DOMAIN
     }
+
 };
 
+console.log(auth)
+
 const transporter = nodemailer.createTransport(mailGun(auth));
+
+console.log(transporter)
 
 const sendMail = (email, subject, text, cb) =>{
     console.log("hello")
